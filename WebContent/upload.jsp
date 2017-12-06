@@ -12,5 +12,11 @@
         上传文件2：<input type="file" name="file2"><br/>
         <input type="submit" value="提交">
     </form>
+    <form action="${pageContext.request.contextPath}/servlet/UserLogin"  method="get">
+        用户：<input type="text" name="username"><br/>
+        mima：<input type="text" name="password"><br/>
+      
+        <input type="submit" value="提交">
+    </form>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
-	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xmlns:web="http://java.sun.com/xml/ns/javaee" 
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="UpLoadServer" version="3.0">
 	<display-name>UpLoadServer</display-name>
@@ -15,16 +15,16 @@
 		<servlet-name>UploadHandleServlet</servlet-name>
 		<servlet-class> poi.sb.upload.UploadHandleServlet</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>UploadHandleServlet</servlet-name>
 		<url-pattern>/servlet/UploadHandleServlet</url-pattern>
 	</servlet-mapping>
-	<!-- <context-param> <param-name>contextConfigLocation</param-name> <param-value>/WEB-INF/applicationContext/applicationContext*.xml</param-value> 
-		</context-param> <listener> <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
-		</listener> -->
-	<!-- <filter> <filter-name>struts2</filter-name> <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class> 
-		</filter> <filter-mapping> <filter-name>struts2</filter-name> <url-pattern>*.action</url-pattern> 
-		</filter-mapping> <filter-mapping> <filter-name>struts2</filter-name> <url-pattern>*.jsp</url-pattern> 
-		</filter-mapping> -->
+	<servlet>
+		<servlet-name>UserLogin</servlet-name>
+		<servlet-class> poi.sb.user.UserLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserLogin</servlet-name>
+		<url-pattern>/servlet/UserLogin</url-pattern>
+	</servlet-mapping>
 </web-app>

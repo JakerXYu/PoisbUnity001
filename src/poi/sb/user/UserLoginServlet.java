@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.Writer;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,13 +13,20 @@ import poi.sb.biz.UserInfoBIZ;
 import poi.sb.domain.UserInfo;
 
 /**
- * 测试登录用的
- * 
- * @author jxy
- *
+ * Servlet implementation class UserLoginServlet
  */
-public class UserLogin extends HttpServlet {
-	private UserInfoBIZ userInfoBIZ;
+@WebServlet("/UserLoginServlet")
+public class UserLoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UserLoginServlet() {
+        super();
+    }
+
+    private UserInfoBIZ userInfoBIZ;
 
 	@Override
 	protected void doGet(HttpServletRequest request,
@@ -28,7 +36,6 @@ public class UserLogin extends HttpServlet {
 		String password = request.getParameter("password");
 		UserInfo userInfo = userInfoBIZ.getUserInfo(username, password);
 		Writer outWriter = response.getWriter();
-		response.setCharacterEncoding("UTF-8");
 		if (userInfo.getUserId() > 0) {
 			outWriter.write("true");
 			System.out.println("true");
