@@ -42,7 +42,7 @@ public class ConnectionUtils {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			threadLocal.set(null);
+			threadLocal.remove();
 		}
 	}
 }
